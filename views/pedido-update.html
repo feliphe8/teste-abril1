@@ -1,0 +1,27 @@
+<div class="container">
+  <form role="form" action="/pedido/{$pedido.id_pedido}" method="post">
+
+    <div class="input-field col s12">
+     <select name="id_produto">
+       {loop="$produto"}
+       <option value="{$value.id_produto}" name="{$value.nome_produto}">{$value.nome_produto}</option>
+       {/loop}
+     </select>
+     <label>Produto</label>
+    </div>
+
+   <div class="input-field col s12">
+     <select name="id_cliente">
+       {loop="$cliente"}
+         <option value="{$value.id_cliente}" name="{$value.nome_cliente}">{$value.nome_cliente}</option>
+       {/loop}
+     </select>
+     <label>Cliente</label>
+  </div>
+
+    <button class="btn waves-effect waves-light" type="submit">Cadastrar
+      <i class="material-icons right">send</i>
+    </button>
+
+  </form>
+</div>
